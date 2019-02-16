@@ -4,7 +4,7 @@
     <div class="form-row">
         <div class="form-group col-md-6">
             <form method="get" action="/main" class="form-inline">
-                <input type="text" name="filter" value="${filter?ifExists}" placeholder="Search by tag">
+                <input type="text" name="filter" value="${filter?ifExists}" placeholder="Search by tag" />
                 <button type="submit" class="btn btn-primary ml-2">Search</button>
             </form>
         </div>
@@ -17,10 +17,10 @@
     <div class="collapse <#if message??>show</#if>" id="collapseExample">
         <div class="form-group mt-3">
             <form method="post" enctype="multipart/form-data">
-                <input type="hidden" name="_csrf" value="${_csrf.token}">
+                <input type="hidden" name="_csrf" value="${_csrf.token}" />
                 <div class="form-group">
                     <input type="text" name="text" class="form-control ${(textError??)?string('is-invalid', '')}"
-                           value="<#if message??>${message.text}</#if>" placeholder="Введите сообщение">
+                           value="<#if message??>${message.text}</#if>" placeholder="Введите сообщение" />
                     <#if textError??>
                         <div class="invalid-feedback">
                             ${textError}
@@ -29,7 +29,7 @@
                 </div>
                 <div class="form-group">
                     <input type="text" name="tag" class="form-control"
-                           value="<#if message??>${message.tag}</#if>" placeholder="Тэг">
+                           value="<#if message??>${message.tag}</#if>" placeholder="Тэг" />
                     <#if tagError??>
                         <div class="invalid-feedback">
                             ${tagError}
@@ -38,8 +38,8 @@
                 </div>
                 <div class="form-group">
                     <div class="custom-file">
-                        <input type="file" name="file" id="customFile">
-                        <#--<label class="custom-file-label" for="customFile">Choose file</label>-->
+                        <label class="custom-file-label" for="customFile">Choose file</label>
+                        <input type="file" name="file" id="customFile" />
                     </div>
                 </div>
                 <button type="submit" class="btn btn-primary">Добавить</button>
@@ -50,7 +50,7 @@
         <#list messages as message>
             <div class="card my-3">
                 <#if message.filename??>
-                    <img src="/img/${message.filename}" class="card-img-top">
+                    <img src="/img/${message.filename}" class="card-img-top" />
                 </#if>
                 <div class="m-2">
                     <span>${message.text}</span>
