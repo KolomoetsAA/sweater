@@ -34,7 +34,7 @@ public class LoginTest {
                 .andDo(print())
                 .andExpect(status().isOk())
                 .andExpect(content().string(containsString("Hello, guest")))
-                .andExpect(content().string(containsString("unknown")));
+                .andExpect(content().string(containsString("Please, login")));
     }
 
     @Test

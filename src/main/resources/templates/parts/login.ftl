@@ -55,6 +55,14 @@
                     </#if>
                 </div>
             </div>
+            <div class="col-sm-6">
+                <div class="g-recaptcha" data-sitekey="6Lfh8JEUAAAAANKW3IP_70aTzDwG9cG2LgRxqNIz"></div>
+                <#if captchaError??>
+                    <div class="alert alert-danger" role="alert">
+                        ${captchaError}
+                    </div>
+                </#if>
+            </div>
         </#if>
         <input type="hidden" name="_csrf" value="${_csrf.token}" />
         <#if !isRegisterForm><a href="/registration">Registration new user</a></#if>
@@ -65,6 +73,6 @@
 <#macro logout>
     <form action="/logout" method="post">
         <input type="hidden" name="_csrf" value="${_csrf.token}" />
-        <button class="btn btn-primary" type="submit">Sign Out</button>
+        <button class="btn btn-primary" type="submit"><#if user??>Sign Out<#else>Log in</#if></button>
     </form>
 </#macro>
