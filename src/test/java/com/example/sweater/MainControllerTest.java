@@ -47,4 +47,5 @@ public class MainControllerTest {
                 .andExpect(authenticated())
                 .andExpect(xpath("").nodeCount(0));
     }
+
 }
