@@ -1,6 +1,7 @@
 package com.example.sweater.domain;
 
 import lombok.Data;
+import lombok.ToString;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
@@ -15,6 +16,7 @@ import java.util.Set;
 @Entity
 @Data
 @Table(name = "usr")
+@ToString(exclude = {"messages", "subscribers", "subscriptions"})
 public class User implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
